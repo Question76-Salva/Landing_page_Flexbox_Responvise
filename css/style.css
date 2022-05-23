@@ -1,0 +1,291 @@
+/* === desarrollo mobile first === */
+
+/** ================================== */
+/** === resetear estilos navegador === */
+/** ================================== */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/** ================== */
+/** === utilidades === */
+/** ================== */
+.container {
+    /* centra contenido automáticamente | ocupa el 80% ancho */
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    /* 1280px cómo máximo ancho */
+    max-width: 1280px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #0F2620;
+}
+
+.btn-secondary {
+    color: white;
+    background-color: #7BA69A;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #A6444C;
+}
+
+.btn-light {
+    color: black;
+    background-color: #DDF2CE;
+}
+
+.btn-dark {
+    color: white;
+    background-color: #302C2D;
+}
+
+
+/* ================ */
+/* === cabecera === */
+/* ================ */
+.bg-header {
+    /* imagen fondo */
+    background-image: url('../img/bg-header.jpg');
+    /* que no se repita la imagen */
+    background-repeat: no-repeat;
+    /* configurar la posición de la imagen */
+    background-position: center;
+    /* que la imagen se ajuste al tamaño del contenedor */
+    background-size: cover;
+    /* altura contenedor | 18.756 x 16px = 300px */
+    height: 18.75em;    
+}
+
+.bg-navbar {
+    /* transparencia */
+    background-color: rgba(0, 0, 0, 0.63);
+    /* espaciado interior | arriba y abajo 1.5em / a los lados 0 */
+    padding: 1.5em 0;
+}
+
+.navbar {
+    display: flex;
+    /* posicicionar elementos de arriba a abajo */
+    flex-direction: column;
+    /* centrar horizontalmente */
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        /* las propiedades se heredan | no hay que volver a escribir | sólo lo nuevo */
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    /* posicicionar elementos de arriba a abajo */
+    flex-direction: column;
+    /* centrar horizonatalmente */
+    align-items: center;
+    /* color font */
+    color: white;
+    /* cambiar tamaño fuente | 16px x 2: 32px */
+    font-size: 2rem;
+    /* quitar subrayado link */
+    text-decoration: none;
+    /* cambiar grosor font | más gruesa */
+    font-weight: 500;
+    /* separar texto del menú de navegación | 32px */
+    margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+}
+
+.navbar-brand img {
+    /* cambiar tamaño img | toma el tamñao de la fuente 2rem 64px */
+    width: 2em;
+}
+
+.navbar-nav {
+    /* transparencia */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* espaciado interior */
+    padding: 1em;
+    /* redondear bordes */
+    border-radius: 0.3em;
+}
+
+.nav-link {
+    /* para que no respete tanto los altos y los anchos | convertir a inline-block */
+    display: inline-block;
+    /* espaciado interior | que respiren */
+    padding: 0.3em;
+    /* quitar subraydado a los enlaces */
+    text-decoration: none;
+    /* cambiar color texto */
+    color: white;
+}
+
+.nav-link:hover {
+    /* transformar al pasar el ratón por encima */
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+
+/* ========================== */
+/* === nuestros productos === */
+/* ========================== */
+.main {
+    background-color: white;
+    padding: 0.3em;
+    margin-top: -2em;
+    border-radius: 0.3em;
+}
+
+@media (min-width: 768px) {
+    .tienda {
+        display: flex; 
+        /* separación entre cards */
+        gap: 1em;       
+    }
+}
+
+.main-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card {    
+    background-color: #A6444C;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.card-body p {
+    font-weight: 200;
+}
+
+/* ================ */
+/* === nosotros === */
+/* ================ */
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color: #302C2D;
+}
+
+.nosotros-col-img {
+    background-image: url('../img/nosotros.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 350px : 16 -> 21.875em */
+    height: 21.875em;
+    width: 100%;
+    order: 2;
+}
+
+.nosotros-col-text {
+    /* mayor prioridad que la imagen | se ve sobre la imagen | cambia sentido */
+    order: 1;
+}
+
+@media (min-width: 576px) {
+    .nosotros-col-img {
+        height: 31.25em;
+    }
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        flex-direction: row;
+    }
+
+    .nosotros-col-img {
+        order: 1;
+        /* que todos los elementos crezcan proporcionalmente */
+        /* 0 -> este elemento tiene el mismo tamaño que el siguiente */
+        flex: 1 1 0;
+    }
+
+    .nosotros-col-text {
+        order: 2;
+        /* que todos los elementos crezcan proporcionalmente */
+        /* 0 -> este elemento tiene el mismo tamaño que el siguiente */
+        flex: 1 1 0;
+    }
+}
+
+.nosotros-body {
+    padding: 1em;
+    text-align: center;
+    color: white;
+}
+
+.nosotros-body h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nosotros-body p {
+    font-weight: 200;
+}
+
+/* ============== */
+/* === footer === */
+/* ============== */
+.bg-footer {
+    background-color: #302C2D;
+    color: white;
+}
+
+.bg-footer p {
+    /* resetear margin por defecto */
+    margin: 0;
+    padding: 1em 0;
+    text-align: center;
+}
